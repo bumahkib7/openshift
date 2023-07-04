@@ -9,14 +9,14 @@ import org.testcontainers.containers.PostgreSQLContainer;
 @TestConfiguration(proxyBeanMethods = false)
 public class TestOpenshiftApplication {
 
-	@Bean
-	@ServiceConnection
-	PostgreSQLContainer<?> postgresContainer() {
-		return new PostgreSQLContainer<>("postgres:latest");
-	}
+    @Bean
+    @ServiceConnection
+    PostgreSQLContainer<?> postgresContainer() {
+        return new PostgreSQLContainer<>("postgres:latest");
+    }
 
-	public static void main(String[] args) {
-		SpringApplication.from(OpenshiftApplication::main).with(TestOpenshiftApplication.class).run(args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.from(OpenshiftApplication::main).with(TestOpenshiftApplication.class).run(args);
+    }
 
 }
